@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "bin/run"
+
+
+main(){
+    local image_name="$1"
+    docker run -it "$image_name" "${@:2}"
+}
+
+main "${1?please specify an image name}" "${@:2}"
+

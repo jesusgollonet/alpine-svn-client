@@ -1,0 +1,9 @@
+#!/bin/bash
+
+main(){
+    local image_name="$1"
+    docker build -t "$image_name" . 
+}
+
+main "${1?please specify an image name}"
+
